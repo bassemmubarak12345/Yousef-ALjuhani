@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورشة يوسف الجهني لصيانة السيارات</title>
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==================== Reset & Global Styles ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #25D366;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* ==================== Header ==================== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #334155;
+            padding: 10px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .header-btns {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.825rem;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 1px solid transparent;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            line-height: 1.2;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: #ffffff;
+            box-shadow: 0 2px 10px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1eb855;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-booking {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            color: #ffffff;
+            box-shadow: 0 2px 10px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn-booking:hover {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+        }
+
+        /* ==================== Hero Section ==================== */
+        .hero {
+            position: relative;
+            min-height: 80vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url('bg.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 25px;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-btn {
+            font-size: 1.15rem;
+            padding: 12px 32px;
+            background-color: #25D366;
+            color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .hero-btn:hover {
+            background-color: #1eb855;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* ==================== About Section ==================== */
+        .about {
+            padding: 80px 0;
+            background-color: #1e293b;
+        }
+
+        .about-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            line-height: 1.9;
+            font-weight: 600;
+        }
+
+        .about-img-box {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .about-img-box img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border: 2px solid #334155;
+            object-fit: cover;
+        }
+
+        /* ==================== Services Section ==================== */
+        .services {
+            padding: 80px 0;
+            background-color: #0f172a;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 35px;
+        }
+
+        .service-card {
+            background-color: #1e293b;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid #334155;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #25D366;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px;
+            color: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card h3 {
+            font-size: 1.1rem;
+            color: #f8fafc;
+            font-weight: 700;
+        }
+
+        .services-highlight {
+            text-align: center;
+            color: #facc15;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-top: 20px;
+        }
+
+        /* ==================== Schedule Section ==================== */
+        .schedule {
+            padding: 80px 0;
+            background-color: #1e293b;
+        }
+
+        .schedule-card {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #0f172a;
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+            text-align: center;
+        }
+
+        .schedule-days {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #25D366;
+            margin-bottom: 20px;
+        }
+
+        .schedule-time {
+            font-size: 1.1rem;
+            color: #e2e8f0;
+            margin: 10px 0;
+        }
+
+        .schedule-break {
+            display: inline-block;
+            background-color: #334155;
+            color: #facc15;
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin: 12px 0;
+        }
+
+        .schedule-address {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed #334155;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #94a3b8;
+        }
+
+        /* ==================== Booking Section ==================== */
+        .booking {
+            padding: 80px 0;
+            background-color: #0f172a;
+        }
+
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #1e293b;
+            padding: 35px;
+            border-radius: 12px;
+            border: 1px solid #334155;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border-radius: 6px;
+            border: 1px solid #334155;
+            background-color: #0f172a;
+            color: #ffffff;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: #25D366;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background-color: #25D366;
+            color: #ffffff;
+            font-size: 1.1rem;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #1eb855;
+        }
+
+        /* ==================== Gallery Section ==================== */
+        .gallery {
+            padding: 80px 0;
+            background-color: #1e293b;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            height: 230px;
+            border: 1px solid #334155;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* ==================== Floating WhatsApp Button ==================== */
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            z-index: 9999;
+            transition: transform 0.3s ease;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-wa svg {
+            width: 35px;
+            height: 35px;
+            fill: #ffffff;
+        }
+
+        /* ==================== Footer ==================== */
+        footer {
+            background-color: #0b1120;
+            padding: 25px 0;
+            text-align: center;
+            border-top: 1px solid #1e293b;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        footer a {
+            color: #25D366;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer svg {
+            width: 16px;
+            height: 16px;
+            fill: #25D366;
+        }
+
+        /* ==================== Responsive Web Design ==================== */
+        @media (max-width: 992px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .about-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-btns {
+                gap: 6px;
+            }
+
+            .btn {
+                padding: 5px 10px;
+                font-size: 0.78rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-logo">
+                <img src="logo.jpg" alt="لوجو ورشة يوسف الجهني" class="logo-img">
+            </div>
+            <div class="header-btns">
+                <a href="https://wa.me/966568544705" target="_blank" rel="noopener" class="btn btn-whatsapp">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                    واتساب
+                </a>
+                <a href="#booking" class="btn btn-booking">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                    احجز موعد
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ورشة يوسف الجهني لصيانة السيارات</h1>
+            <a href="#booking" class="btn hero-btn">احجز موعد الان</a>
+        </div>
+    </section>
+
+    <!-- 3. About Section -->
+    <section class="about">
+        <div class="container">
+            <h2 class="section-title">عن الورشة</h2>
+            <div class="about-wrapper">
+                <div class="about-text">
+                    <p>ورشة يوسف الجهني متخصصة في صيانة وفحص وسمكرة السيارات اليابانية والكورية والأمريكية وتوفير جميع أنواع القطع</p>
+                </div>
+                <div class="about-img-box">
+                    <img src="1.jpg" alt="عن ورشة يوسف الجهني">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">الخدمات</h2>
+            <div class="services-grid">
+                
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3>إصلاحات وأعمال صيانة عامة</h3>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/>
+                        </svg>
+                    </div>
+                    <h3>تغيير زيت المحرك</h3>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9"/>
+                            <circle cx="12" cy="12" r="3"/>
+                            <line x1="12" y1="3" x2="12" y2="9"/>
+                            <line x1="12" y1="15" x2="12" y2="21"/>
+                            <line x1="3" y1="12" x2="9" y2="12"/>
+                            <line x1="15" y1="12" x2="21" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3>إصلاح معدات القيادة وأنظمة التعليق</h3>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="7" width="20" height="12" rx="2"/>
+                            <line x1="6" y1="11" x2="10" y2="11"/>
+                            <line x1="8" y1="9" x2="8" y2="13"/>
+                            <line x1="14" y1="11" x2="18" y2="11"/>
+                            <line x1="6" y1="4" x2="6" y2="7"/>
+                            <line x1="18" y1="4" x2="18" y2="7"/>
+                        </svg>
+                    </div>
+                    <h3>تغيير فرامل وبطاريات وزجاج السيارات</h3>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 3h6v4H3z"/>
+                            <path d="M6 7v14"/>
+                            <path d="M12 7h8a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-8"/>
+                            <path d="M12 3v18"/>
+                        </svg>
+                    </div>
+                    <h3>طلاء السيارات</h3>
+                </div>
+
+            </div>
+            <p class="services-highlight">والكثير من الإصلاحات والتغييرات الأخرى</p>
+        </div>
+    </section>
+
+    <!-- 5. Schedule Section -->
+    <section class="schedule">
+        <div class="container">
+            <h2 class="section-title">مواعيد العمل</h2>
+            <div class="schedule-card">
+                <div class="schedule-days">من السبت إلى الخميس</div>
+                <div class="schedule-time">الفترة الأولى: 8:30 صباحاً - 1:30 ظهراً</div>
+                <div><span class="schedule-break">فترة راحة</span></div>
+                <div class="schedule-time">الفترة الثانية: 3:30 عصراً - 9:00 مساءً</div>
+                <div class="schedule-address">صناعية المهيلب، أم الحمام الشرقي، الرياض 12326</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <h2 class="section-title">احجز موعدك</h2>
+            <form class="booking-form" id="bookingForm">
+                <div class="form-group">
+                    <label for="name">الاسم</label>
+                    <input type="text" id="name" class="form-control" placeholder="أدخل اسمك الكامل" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">رقم الجوال</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="05xxxxxxxx" required>
+                </div>
+                <div class="form-group">
+                    <label for="car">نوع وموديل السيارة</label>
+                    <input type="text" id="car" class="form-control" placeholder="مثال: تويوتا كامري 2022" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">التاريخ</label>
+                    <input type="date" id="date" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="problem">المشكلة المراد حلها</label>
+                    <textarea id="problem" class="form-control" placeholder="اكتب تفاصيل المشكلة أو الصيانة المطلوبة..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit">ارسال الحجز</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 7. Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">صور تابعة للورشة</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="bg.jpg" alt="معرض صور 1"></div>
+                <div class="gallery-item"><img src="2.jpg" alt="معرض صور 2"></div>
+                <div class="gallery-item"><img src="3.jpg" alt="معرض صور 3"></div>
+                <div class="gallery-item"><img src="4.jpg" alt="معرض صور 4"></div>
+                <div class="gallery-item"><img src="5.jpg" alt="معرض صور 5"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Floating WhatsApp Button -->
+    <a href="https://wa.me/966568544705" target="_blank" rel="noopener" class="floating-wa" aria-label="تواصل معنا عبر الواتساب">
+        <svg viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+    </a>
+
+    <!-- 9. Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 جميع الحقوق محفوظة - ورشة يوسف الجهني</p>
+            <p>
+                مصمم بواسطة 
+                <a href="https://wa.me/201029012522" target="_blank" rel="noopener">
+                    باسم مبارك 
+                    <svg viewBox="0 0 24 24">
+                        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                    </svg>
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        const GOOGLE_SCRIPT_URL = "ضع_رابط_GOOGLE_APPS_SCRIPT_هنا";
+
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const car = document.getElementById('car').value.trim();
+            const date = document.getElementById('date').value;
+            const problem = document.getElementById('problem').value.trim();
+
+            const waMessage = `حجز جديد من الموقع 🔧\nالاسم: ${name}\nرقم الجوال: ${phone}\nنوع السيارة: ${car}\nالتاريخ: ${date}\nالمشكلة: ${problem}`;
+            const waUrl = `https://wa.me/966568544705?text=${encodeURIComponent(waMessage)}`;
+            window.open(waUrl, '_blank');
+
+            const formData = {
+                name: name,
+                phone: phone,
+                car: car,
+                date: date,
+                problem: problem
+            };
+
+            if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "ضع_رابط_GOOGLE_APPS_SCRIPT_هنا") {
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                })
+                .then(() => console.log('تم إرسال الحجز بنجاح إلى Google Sheets'))
+                .catch(err => console.error('خطأ في الإرسال إلى Google Sheets:', err));
+            }
+
+            this.reset();
+        });
+    </script>
+</body>
+</html>
